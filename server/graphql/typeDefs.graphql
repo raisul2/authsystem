@@ -1,0 +1,34 @@
+type Msg {
+  message: String
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  password: String!
+  createdAt: String!
+  token: String!
+}
+
+type Query {
+  getMsgs: [Msg!]
+}
+
+type Mutation {
+  registerUser(registerINput: RegisterInput): User!
+  loginUser(loginInput: LoginInput!): User!
+  createMsg(msg: String!): Msg!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input RegisterInput {
+  username: String
+  email: String!
+  password: String!
+  confirmPassword: String!
+}
